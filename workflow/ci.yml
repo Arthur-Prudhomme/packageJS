@@ -23,7 +23,11 @@ jobs:
       - name: 'Run tests'
         run: npm test
 
+      - name: 'Run build'
+        run: npm run build
+
       - name: 'Publish to NPM'
         uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.PACKAGEJS }}
+          package: dist/
