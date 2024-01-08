@@ -1,31 +1,33 @@
-name: CI
+name: Continious Integration
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build-and-test:
+  ci: 
+    name: CI
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: 'Checkout'
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: 'Setup Node.js'
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: '19'
 
-      - name: Install dependencies
+      - name: 'Install dependencies'
         run: npm install
 
-      - name: Build TypeScript
+      - name: 'Run tests'
+        run: npm test
+
+      - name: 'Run build'
         run: npm run build
 
-      - name: Run tests
-        run: npm test
+      - name: 'Publish to NPM'
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.PACKAGEJS }}
+          package: dist/
