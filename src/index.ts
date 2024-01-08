@@ -1,10 +1,10 @@
-class Mouche {
-    static toutesMouches: Mouche[] = [];
-    estPose: boolean;
-    constructor() {
-        Mouche.toutesMouches.push(this);
-        this.estPose = false;
-    }
+export class Mouche {
+	static toutesMouches: Mouche[] = [];
+	estPose: boolean;
+	constructor() {
+		Mouche.toutesMouches.push(this);
+		this.estPose = false;
+	}
 
     /**
      * Permet de déposer cette mouche sur le cadav passé en paramètre. Sauvegarde la mouche dans l'objet cadav
@@ -20,16 +20,16 @@ class Mouche {
     }
 }
 
-class Cadav {
-    mouches: Mouche[] = [];
-    estMouchePosee(mouche: Mouche) {
-        return this.mouches.some((m: Mouche) => m === mouche);
-    }
+export class Cadav {
+	mouches: Mouche[] = [];
+	estMouchePosee(mouche: Mouche) {
+		return this.mouches.some((m: Mouche) => m === mouche);
+	}
 }
 
 type MaybeMouche = Mouche | undefined;
 
-class Robot {
+export class Robot {
     /**
      * Permet de vérifier si la  mouche est posé
      * @param {Mouche} mouche
