@@ -1,6 +1,6 @@
 {
   "name": "saumon-gravelax",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Détecte la mouche qui s'est déposée sur un cadav (et qui est allée se poser sur du beurre ou du pain)",
   "main": "index.js",
   "scripts": {
