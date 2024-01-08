@@ -49,8 +49,19 @@ class Robot {
 
     /**
      * Permet de savoir si un cadav a été touché par une mouche
-     * @param {cadav} Cadav
+     * @param {Cadav} cadav
      * @returns {boolean} vérifie si une mouche s'est posé ou pas
      */
     reverseDetek(cadav) { }
+
+
+    /**
+     * Permet de savoir si un cadav a été touché par une mouche
+     * @param {number[]} tableau
+     * @returns {number} vérifie si une mouche s'est posé ou pas
+     */
+    calculMoyenne(tableau: number[]) {
+        let sum = tableau.reduce((a, b) => a + b, 0);
+        return Math.round((sum / tableau.length));
+    }
 }
