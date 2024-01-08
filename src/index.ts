@@ -1,4 +1,4 @@
-class Mouche {
+export class Mouche {
 	static toutesMouches: Mouche[] = [];
 	estPose: boolean;
 	constructor() {
@@ -20,7 +20,7 @@ class Mouche {
 	}
 }
 
-class Cadav {
+export class Cadav {
 	mouches: Mouche[] = [];
 	estMouchePosee(mouche: Mouche) {
 		return this.mouches.some((m: Mouche) => m === mouche);
@@ -29,7 +29,7 @@ class Cadav {
 
 type MaybeMouche = Mouche | undefined;
 
-class Robot {
+export class Robot {
 	detek(mouche: Mouche): boolean {
 		return mouche.estPose;
 	}
