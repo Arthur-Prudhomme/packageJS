@@ -25,6 +25,9 @@ jobs:
 
       - name: 'Run build'
         run: npm run build
+      
+      - name: 'Copy package.json to dist'
+        run: cp package.json dist/
 
       - name: 'Publish to NPM'
         uses: JS-DevTools/npm-publish@v2
