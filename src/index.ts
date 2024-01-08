@@ -49,6 +49,8 @@ class Robot {
 
     /**
      * Permet de savoir si un cadav a été touché par une mouche
+     * @param {cadav} Cadav
+     * @returns {boolean} vérifie si une mouche s'est posé ou pas
      */
     reverseDetek(cadav) { }
 }
