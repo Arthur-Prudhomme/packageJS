@@ -8,7 +8,7 @@ class Mouche {
      */
     pose(cadav: Cadav): boolean {
         if (!(cadav instanceof Cadav)) return false;
-        if (cadav.mouches.some((mouche) => mouche === this)) return true;
+        if (cadav.estMouchePosee(this)) return true;
         cadav.mouches.push(this);
         return true;
     }
@@ -16,6 +16,9 @@ class Mouche {
 
 class Cadav {
     mouches: Mouche[] = [];
+    estMouchePosee(mouche: Mouche) {
+        return this.mouches.some((m: Mouche) => m === mouche)
+    }
 }
 
 class Robot {
