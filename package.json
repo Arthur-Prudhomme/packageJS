@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc --project ./tsconfig.json",
-    "test": "jest -c ./jest.unit.json"
+    "test": "jest -c ./jest.unit.json",
+    "release": "release-it"
   },
   "author": "",
   "license": "MIT",
@@ -13,8 +14,14 @@
     "@types/jest": "^26.0.18",
     "@types/node": "^14.14.11",
     "jest": "^26.4.2",
+    "release-it": "^17.0.1",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.2"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
