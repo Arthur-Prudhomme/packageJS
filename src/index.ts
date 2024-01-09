@@ -86,7 +86,7 @@ export function mergeSort(
 		mergeSort(rightArray, reversed),
 		reversed
 	);
-
+}
 /**
  * Créer un tableau d'une certaine taille à partir d'un point
  * @param {number} startAt
