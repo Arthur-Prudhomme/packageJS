@@ -1,6 +1,6 @@
 {
   "name": "useful-tricks",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "A collection of useful tricks for js & ts array & string",
   "main": "index.js",
   "scripts": {
