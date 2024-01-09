@@ -86,4 +86,48 @@ export function mergeSort(
 		mergeSort(rightArray, reversed),
 		reversed
 	);
+
+/**
+ * Créer un tableau d'une certaine taille à partir d'un point
+ * @param {number} startAt
+ * @param {number} size
+ * @returns {number[]} tableau
+ */
+export function range(startAt: number, size: number): number[] {
+	return [...Array(size).keys()].map(i => i + startAt)
+}
+
+/**
+ * Découpe un tableau en chunk d'une certaine taille
+ * @param {number[]} tableau
+ * @param {number} chunk
+ * @returns {number[][]} tableau
+ */
+export function chunk(tableau: number[], chunk: number): number[][] {
+	const compTableau: number[][] = []
+	for (let i = 0; i < tableau.length; i += chunk) {
+		compTableau.push(tableau.slice(i, i + chunk))
+	}
+	return compTableau;
+}
+
+export function sunder(
+	array: number[],
+	length: number,
+	keepScrap: boolean = false
+): number[][] {
+	const sundered: number[][] = Array.from({ length }).map(() => []);
+	const minFill: number = Math.floor(array.length / length);
+	array.forEach((value) => {
+		for (let s of sundered) {
+			if (s.length === minFill) continue;
+			else {
+				s.push(value);
+				break;
+			}
+		}
+	});
+	if (keepScrap && array.length - minFill * length > 0)
+		sundered[length - 1].push(...array.slice(minFill * length));
+	return sundered;
 }
