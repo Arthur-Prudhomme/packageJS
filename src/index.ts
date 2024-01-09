@@ -111,6 +111,13 @@ export function chunk(tableau: number[], chunk: number): number[][] {
 	return compTableau;
 }
 
+/**
+ * Découpe un tableau en un certain nombre de chunks
+ * @param {number[]} array Le tableau
+ * @param {number} length  Le nombre de chunks
+ * @param {boolean} keepScrap (Optionnel) Définissez à true pour conserver les éléments restants dans le dernier chunk.
+ * @returns {number[][]} Le tableau découpé.
+ */
 export function sunder(
 	array: number[],
 	length: number,
