@@ -31,3 +31,27 @@ export function arrayToUpperCase(...tableau: string[]): string[] {
 		[]
 	);
 }
+
+/**
+ * Créer un tableau d'une certaine taille à partir d'un point
+ * @param {number} startAt
+ * @param {number} size
+ * @returns {number[]} tableau
+ */
+export function range(startAt: number, size: number): number[] {
+	return [...Array(size).keys()].map(i => i + startAt)
+}
+
+/**
+ * Découpe un tableau en chunk d'une certaine taille
+ * @param {number[]} tableau
+ * @param {number} chunk
+ * @returns {number[][]} tableau
+ */
+export function chunk(tableau: number[], chunk: number): number[][] {
+	const compTableau: number[][] = []
+	for (let i = 0; i < tableau.length; i += chunk) {
+		compTableau.push(tableau.slice(i, i + chunk))
+	}
+	return compTableau;
+}
