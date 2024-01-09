@@ -1,3 +1,12 @@
+---
+name: " Signalement de bug"
+about: Utilisez ce modèle pour signaler un bug
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ## Description du bug
 
 [Description détaillée du bug]

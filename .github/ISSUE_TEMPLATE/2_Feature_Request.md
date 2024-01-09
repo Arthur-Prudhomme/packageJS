@@ -1,3 +1,12 @@
+---
+name: "Requête de fonctionnalité"
+about: Utilisez ce modèle pour proposer une nouvelle feature
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ## Description de la fonctionnalité demandée
 
 [Votre description détaillée de la fonctionnalité que vous souhaitez ajouter]
