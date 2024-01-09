@@ -55,3 +55,24 @@ export function chunk(tableau: number[], chunk: number): number[][] {
 	}
 	return compTableau;
 }
+
+export function sunder(
+	array: number[],
+	length: number,
+	keepScrap: boolean = false
+): number[][] {
+	const sundered: number[][] = Array.from({ length }).map(() => []);
+	const minFill: number = Math.floor(array.length / length);
+	array.forEach((value) => {
+		for (let s of sundered) {
+			if (s.length === minFill) continue;
+			else {
+				s.push(value);
+				break;
+			}
+		}
+	});
+	if (keepScrap && array.length - minFill * length > 0)
+		sundered[length - 1].push(...array.slice(minFill * length));
+	return sundered;
+}

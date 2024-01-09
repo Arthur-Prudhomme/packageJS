@@ -3,7 +3,8 @@ import {
 	arrayToLowerCase,
 	arrayToUpperCase,
 	range,
-	chunk
+	chunk,
+	sunder
 } from "../src";
 
 describe("calcul Moyenne", () => {
@@ -59,5 +60,44 @@ describe("création d'un tableau d'une certaine taille à partir d'un point", ()
 		expect(chunk([1, 2, 3, 4], 2)).toStrictEqual([[1, 2], [3, 4]]);
 		expect(chunk([1, 2, 3, 4, 5], 2)).toStrictEqual([[1, 2], [3, 4], [5]]);
 		expect(chunk([1, 2, 3, 4, 5], 1)).toStrictEqual([[1], [2], [3], [4], [5]]);
+	});
+});
+describe("Vérification de la fonction sunder", () => {
+	it("[1, 2, 3, 4] par 2 => [[1, 2], [3, 4]]", () => {
+		expect(sunder([1, 2, 3, 4], 2)).toStrictEqual([
+			[1, 2],
+			[3, 4],
+		]);
+	});
+	it("[1, 2, 3, 4, 5] par 2 => [[1, 2], [3, 4]]", () => {
+		expect(sunder([1, 2, 3, 4, 5], 2)).toStrictEqual([
+			[1, 2],
+			[3, 4],
+		]);
+	});
+	it("[1, 2, 3, 4, 5] par 3 => [[1], [2], [3]]", () => {
+		expect(sunder([1, 2, 3, 4, 5], 3)).toStrictEqual([[1], [2], [3]]);
+	});
+});
+
+describe("Vérification de la fonction sunder avec reste", () => {
+	it("[1, 2, 3, 4] par 2 => [[1, 2], [3, 4]]", () => {
+		expect(sunder([1, 2, 3, 4], 2, true)).toStrictEqual([
+			[1, 2],
+			[3, 4],
+		]);
+	});
+	it("[1, 2, 3, 4, 5] par 2 => [[1, 2], [3, 4, 5]]", () => {
+		expect(sunder([1, 2, 3, 4, 5], 2, true)).toStrictEqual([
+			[1, 2],
+			[3, 4, 5],
+		]);
+	});
+	it("[1, 2, 3, 4, 5] par 3 => [[1], [2], [3, 4, 5]]", () => {
+		expect(sunder([1, 2, 3, 4, 5], 3, true)).toStrictEqual([
+			[1],
+			[2],
+			[3, 4, 5],
+		]);
 	});
 });
